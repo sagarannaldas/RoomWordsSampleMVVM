@@ -17,10 +17,10 @@ public abstract class WordRoomDataBase extends RoomDatabase {
 
     private static volatile WordRoomDataBase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
-    static final ExecutorService databaseWriteExecutor =
+    public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static WordRoomDataBase getDataBase(final Context context) {
+    public static WordRoomDataBase getDataBase(final Context context) {
         if(INSTANCE == null) {
             synchronized (WordRoomDataBase.class) {
                 if(INSTANCE == null) {
