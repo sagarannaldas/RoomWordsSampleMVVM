@@ -1,8 +1,6 @@
 package in.techrebounce.roomwordssamplemvvm.viewmodel;
 
 import android.app.Application;
-
-import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
@@ -17,13 +15,13 @@ public class WordViewModel extends AndroidViewModel {
 
     private final LiveData<List<Word>> mAllWords;
 
-    public WordViewModel(@NonNull Application application) {
+    public WordViewModel(Application application) {
         super(application);
         mWordRepository = new WordRepository(application);
         mAllWords = mWordRepository.getAllWords();
     }
 
-    LiveData<List<Word>> getAllWords() {
+    public LiveData<List<Word>> getAllWords() {
         return mAllWords;
     }
 
